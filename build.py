@@ -21,4 +21,5 @@ except OSError:
 shutil.copytree(STATIC_DIR, BUILD_DIR)
 
 for url, params in urls.items():
+	print '\033[92m/%s\033[0m' % url
 	params.get('processor', default)(url, params['template'], params.get('data', {}))
